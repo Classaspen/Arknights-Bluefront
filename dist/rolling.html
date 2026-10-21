@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Arknights: Rolling Front</title><link rel="stylesheet" href="rolling.css"></head><body>
+<canvas id="battle" tabindex="0" aria-label="列车战场，点击空阵位转移干员，点击敌人集中火力"></canvas>
+<div id="gameUI" hidden>
+<header><div class="wordmark">ARKNIGHTS<span>ROLLING FRONT</span></div><div class="route"><div class="route-label"><span id="region">01 / 荒原追击</span><span id="distance">0 / 120 秒</span></div><div class="track"><i id="routeBar"></i><b style="left:30%"></b><b style="left:56%"></b><b style="left:80%"></b></div></div><button id="pauseButton" aria-label="暂停行动">Ⅱ</button><button id="audioButton" aria-label="切换音效">音效 OFF</button></header>
+<div class="hull"><span>罗德岛护送列车</span><strong id="hullValue">100</strong><div><i id="hullBar"></i></div><small>HULL INTEGRITY</small></div>
+<div class="score"><b id="killValue">0</b><span>击退</span><strong id="combo"></strong></div>
+<div id="banner" role="status"></div><div id="callout"></div>
+<div class="orders"><span id="instruction">选择干员 → 点击另一阵位转移 · 点击敌人集火</span><span id="slowText">按住 SPACE · 战术减速</span></div>
+<section id="roster" aria-label="干员与技能"></section>
+</div>
+<section id="intro" class="screen"><div class="intro-copy"><p class="kicker">RHODES ISLAND / ESCORT OPERATION</p><h1>ARKNIGHTS<span>ROLLING FRONT</span></h1><h2>移动战线</h2><p class="lead">阵地正在前进。<br>让整条战线，成为你的武器。</p><div class="brief"><b>TR-02 / 装甲列车护送</b><span>守住 120 秒 · 穿越隧道 · 抵达撤离点</span></div><div class="how"><p><b>01</b> 三名干员自动攻击，按 1 / 2 / 3 选择</p><p><b>02</b> 点击空阵位转移，点击敌人集中火力</p><p><b>03</b> E 释放所选技能，按住空格减速思考</p></div><button id="launchRolling" disabled>正在载入原作战斗模型…</button><p id="loadStatus">PREPARING OPERATORS</p><small class="fan">非官方同人试玩 · 原作人物 / 骨骼动画 · 两分钟完整行动</small></div><div class="intro-crew"><div><img src="assets/exusiai-portrait.png" alt="能天使"><span>EXUSIAI<b>火力压制</b></span></div><div><img src="assets/silverash-portrait.png" alt="银灰"><span>SILVERASH<b>登车拦截</b></span></div><div><img src="assets/amiya-portrait.png" alt="阿米娅"><span>AMIYA<b>装甲破击</b></span></div></div></section>
+<section id="pauseScreen" class="screen modal" hidden><div><p class="kicker">TACTICAL PAUSE</p><h2>战线暂歇</h2><p>调整阵位，准备下一轮追击。</p><button id="continueRolling">继续行动</button><button id="retryRolling">重新出发</button><button id="menuRolling">返回作战准备</button></div></section>
+<section id="resultScreen" class="screen modal" hidden><div><p class="kicker">OPERATION REPORT</p><h2 id="resultTitle">护送完成</h2><p id="resultDesc"></p><div id="resultStats"></div><button id="againRolling">再次行动</button><button id="resultMenu">返回作战准备</button></div></section>
+<script>let viewmodelReady=false;function refreshAssetStatus(){const ok=typeof OperatorAssets!=='undefined'&&OperatorAssets.ready&&EnemyAssets.ready;const error=EnemyAssets.error||(typeof OperatorAssets!=='undefined'&&OperatorAssets.error);document.getElementById('launchRolling').disabled=!ok;document.getElementById('launchRolling').textContent=error?'资源加载失败 · 刷新重试':ok?'开始行动  →':'正在载入原作战斗模型…';document.getElementById('loadStatus').textContent=error|| (ok?'ALL OPERATORS READY':'PREPARING OPERATORS')}</script>
+<script src="spine-lite.js"></script><script src="vendor/spine-canvas.js"></script><script src="operators.js"></script><script src="rolling.js"></script></body></html>

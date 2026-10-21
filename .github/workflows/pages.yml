@@ -29,6 +29,8 @@ jobs:
           node --check dist/art.js
           node --check dist/game.js
           node check.cjs
+          node --check dist/rolling.js
+          node check-rolling.cjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload game
