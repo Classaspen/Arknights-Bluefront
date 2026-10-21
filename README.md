@@ -65,3 +65,13 @@ node check.cjs
 第一视角改为粗描边、简化阴影、色块和短圆手指的 2D 小人风格；保留角色袖口、Vector 铳、源石术式和杖中剑的辨识特征。第一视角为生成的同人素材，并非原版第一视角。
 
 编队肖像来源：[yuanyan3060/ArknightsGameResource](https://github.com/yuanyan3060/ArknightsGameResource) 的 `portrait/char_103_angel_1.png`、`portrait/char_002_amiya_1.png`、`portrait/char_172_svrash_1.png`，原作美术权利归原权利方所有。
+
+## V0.5 原作干员动作与连续装填修复
+
+移除战斗中生成的静态手臂图，改为原作完整 2D 战斗小人的登场、待机、攻击、技能动作；屏幕右侧展示当前操控干员，保留鼠标视角和 WASD。原作战斗模型没有行走和第一视角手臂动作，未伪称提供这两类原作动画。
+
+根据 PRTS 的 [能天使](https://prts.wiki/w/能天使/spine)、[阿米娅](https://prts.wiki/w/阿米娅/spine)、[银灰](https://prts.wiki/w/银灰/spine) 模型索引，使用 [fexli/ArknightsResource](https://github.com/fexli/ArknightsResource) 的对应 Front 模型镜像。三个角色的 .skel / .atlas / .png 原样保存，包含原作骨骼、网格变形和表情动画。使用 EsotericSoftware/spine-runtimes 3.8 的 Canvas 运行时，保留其源文件许可证。
+
+技能展示使用已有的原作肖像切入、原作技能姿势；银灰与阿米娅改为持续多次范围攻击。尚未取得可独立播放的原作 Unity 粒子特效，肖像切入和原作姿势不能等同于完整原版技能特效。
+
+R 键装填计时完成后钳制为 0，修复计时越过 0 后第二次及以后装填被阻止的问题；兼容 key/code，提供装填进度、满弹/近战提示、装填与技能按钮。测试覆盖连续两次装填、时间越界、暂停与三位干员全部动画。
