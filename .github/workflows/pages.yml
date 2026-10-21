@@ -23,6 +23,8 @@ jobs:
           node-version: '22'
       - name: Check game
         run: |
+          node --check dist/spine-lite.js
+          node --check dist/fps.js
           node --check dist/art.js
           node --check dist/game.js
           node check.cjs
