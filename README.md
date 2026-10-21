@@ -56,3 +56,12 @@ node check.cjs
 - 原作士兵、重装防御者的贴图、骨骼与 Idle / Move_Loop / Attack 动画。
 
 敌人素材来源：[FaterLinLi/Arknights-Enemy](https://github.com/FaterLinLi/Arknights-Enemy)，对应 `Nsabr士兵/Spine` 和 `Shield重装防御者/重装防御者/Spine`。原作内容的权利归原权利方所有。当前读取骨骼变换、IK、区域与网格贴图、帧曲线和绘制顺序；尚未实现 mesh deform 动画，因此部分衣物形变可能与原版有细微差异。
+
+
+## V0.4 战前编队与 2D 小人风格
+
+首页改为灰白战前编队界面：三张原作干员肖像卡片、关卡地图预览、作战目标，以及右下角红色开始行动按钮。选择仍为单人操控一名干员。
+
+第一视角改为粗描边、简化阴影、色块和短圆手指的 2D 小人风格；保留角色袖口、Vector 铳、源石术式和杖中剑的辨识特征。第一视角为生成的同人素材，并非原版第一视角。
+
+编队肖像来源：[yuanyan3060/ArknightsGameResource](https://github.com/yuanyan3060/ArknightsGameResource) 的 `portrait/char_103_angel_1.png`、`portrait/char_002_amiya_1.png`、`portrait/char_172_svrash_1.png`，原作美术权利归原权利方所有。
