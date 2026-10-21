@@ -40,3 +40,5 @@ body:not(.playing) footer{bottom:12px;color:#929ba2;font-size:8px;letter-spacing
 #reloadBtn{display:block;margin:0 0 8px auto;border:1px solid #a4c6d166;background:#101e2de0;color:#e9eff4;padding:8px 16px;cursor:pointer;font-size:13px}
 #skillBtn{border:1px solid #91a7b855;background:#132233d9;color:#e4f3ff;padding:14px 22px;cursor:pointer}
 #skillBtn b{font:inherit;font-weight:700}
+
+#skillBtn,#reloadBtn{pointer-events:auto;position:relative;z-index:2}
